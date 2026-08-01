@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DurSigns — Brand, Web & Logo Design Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14181F;
+    --ink-soft:#1E2430;
+    --paper:#F2EFE6;
+    --paper-dim:#E7E2D3;
+    --yellow:#FFC93C;
+    --orange:#FF5A1F;
+    --steel:#8B93A1;
+    --white:#FFFFFF;
+    --line: rgba(242,239,230,0.16);
+    --line-dark: rgba(20,24,31,0.14);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:1.02;
+    font-weight:700;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  img,svg{display:block;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  :focus-visible{
+    outline:3px solid var(--orange);
+    outline-offset:3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:76px;
+  }
+  .logo-mark{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .logo-mark svg{width:30px; height:30px;}
+  .logo-word{
+    color:var(--paper);
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:20px;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+  }
+  .logo-word span{color:var(--yellow);}
+  nav.links{
+    display:flex;
+    gap:36px;
+    align-items:center;
+  }
+  nav.links a{
+    color:var(--paper);
+    font-size:13px;
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    opacity:0.82;
+    transition:opacity .2s ease, color .2s ease;
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.links a:hover{opacity:1; border-bottom-color:var(--yellow);}
+  .nav-cta{
+    background:var(--yellow);
+    color:var(--ink) !important;
+    padding:10px 18px !important;
+    border-bottom:none !important;
+    font-weight:600;
+  }
+  .nav-cta:hover{background:var(--orange); color:var(--white) !important;}
+  .nav-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--paper);
+    padding:172px 0 88px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      repeating-linear-gradient(90deg, transparent, transparent 79px, var(--line) 79px, var(--line) 80px);
+    opacity:0.5;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--yellow);
+    font-size:12px;
+    margin-bottom:26px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:2px;
+    background:var(--yellow);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(40px, 6.4vw, 84px);
+    max-width:920px;
+    color:var(--paper);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--yellow);
+  }
+  .hero-sub{
+    max-width:520px;
+    margin-top:26px;
+    color:var(--steel);
+    font-size:17px;
+  }
+
+  .flap-row{
+    margin-top:44px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .flap-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--steel);
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+  }
+  .flap-plate{
+    background:var(--ink-soft);
+    border:1px solid var(--line);
+    border-left:5px solid var(--yellow);
+    padding:12px 22px;
+    min-width:230px;
+    overflow:hidden;
+    position:relative;
+    height:52px;
+    display:flex;
+    align-items:center;
+  }
+  .flap-plate span{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:22px;
+    letter-spacing:0.03em;
+    color:var(--paper);
+    position:absolute;
+    left:22px;
+    opacity:0;
+    transform:translateY(16px);
+    animation: flap 8s infinite;
+  }
+  .flap-plate span:nth-child(1){animation-delay:0s;}
+  .flap-plate span:nth-child(2){animation-delay:2s;}
+  .flap-plate span:nth-child(3){animation-delay:4s;}
+  .flap-plate span:nth-child(4){animation-delay:6s;}
+  @keyframes flap{
+    0%{opacity:0; transform:translateY(16px);}
+    4%{opacity:1; transform:translateY(0);}
+    22%{opacity:1; transform:translateY(0);}
+    26%{opacity:0; transform:translateY(-16px);}
+    100%{opacity:0; transform:translateY(-16px);}
+  }
+
+  .hero-btns{
+    margin-top:46px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    padding:15px 26px;
+    transition:transform .18s ease, background .18s ease, color .18s ease;
+  }
+  .btn-primary{
+    background:var(--yellow);
+    color:var(--ink);
+    font-weight:600;
+  }
+  .btn-primary:hover{background:var(--orange); color:var(--white); transform:translateY(-2px);}
+  .btn-outline{
+    border:1px solid var(--line);
+    color:var(--paper);
+  }
+  .btn-outline:hover{border-color:var(--yellow); color:var(--yellow); transform:translateY(-2px);}
+
+  /* ---------- TICKER ---------- */
+  .ticker{
+    background:var(--yellow);
+    color:var(--ink);
+    overflow:hidden;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .ticker-track{
+    display:flex;
+    width:max-content;
+    animation:scroll 26s linear infinite;
+  }
+  .ticker-item{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:14px 28px;
+    white-space:nowrap;
+    border-right:1px solid rgba(20,24,31,0.25);
+    font-weight:500;
+  }
+  @keyframes scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  section{padding:120px 0;}
+  .sec-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+    margin-bottom:64px;
+    flex-wrap:wrap;
+  }
+  .sec-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--orange);
+    letter-spacing:0.12em;
+    margin-bottom:14px;
+    display:block;
+  }
+  .sec-head h2{
+    font-size:clamp(30px, 4vw, 48px);
+  }
+  .sec-head p{
+    max-width:360px;
+    color:#4B4F58;
+    font-size:15px;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--paper);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:2px;
+    background:var(--ink);
+    border:2px solid var(--ink);
+  }
+  .service-card{
+    background:var(--paper);
+    padding:40px;
+    transition:background .2s ease;
+  }
+  .service-card:hover{background:var(--paper-dim);}
+  .service-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:26px;
+  }
+  .service-code{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    background:var(--ink);
+    color:var(--yellow);
+    padding:4px 9px;
+  }
+  .service-card h3{
+    font-size:24px;
+    margin-bottom:14px;
+  }
+  .service-card p{
+    color:#4B4F58;
+    font-size:14.5px;
+    max-width:420px;
+  }
+  .arrow-icon{width:20px; height:20px; flex-shrink:0;}
+
+  /* ---------- WORK ---------- */
+  .work{background:var(--ink); color:var(--paper);}
+  .work .sec-head p{color:var(--steel);}
+  .work-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:24px;
+  }
+  .work-card{
+    border:1px solid var(--line);
+    padding:32px;
+    position:relative;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .work-card:hover{border-color:var(--yellow); transform:translateY(-4px);}
+  .work-plate{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--ink);
+    background:var(--yellow);
+    padding:3px 8px;
+    margin-bottom:20px;
+  }
+  .work-card h3{
+    font-size:22px;
+    margin-bottom:8px;
+  }
+  .work-card .work-type{
+    color:var(--steel);
+    font-size:13.5px;
+    margin-bottom:18px;
+  }
+  .tag-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    border:1px solid var(--line);
+    padding:4px 9px;
+    color:var(--steel);
+    text-transform:uppercase;
+  }
+
+  /* ---------- PROCESS (route line) ---------- */
+  .process{background:var(--paper);}
+  .route{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:0;
+    margin-top:20px;
+  }
+  .route::before{
+    content:"";
+    position:absolute;
+    top:11px;
+    left:0; right:0;
+    height:3px;
+    background:var(--ink);
+  }
+  .stop{
+    position:relative;
+    padding-top:44px;
+    padding-right:24px;
+  }
+  .stop::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:24px; height:24px;
+    border-radius:50%;
+    background:var(--orange);
+    border:3px solid var(--paper);
+    outline:3px solid var(--ink);
+  }
+  .stop .mono{
+    font-size:11px;
+    color:var(--orange);
+    display:block;
+    margin-bottom:10px;
+  }
+  .stop h3{font-size:19px; margin-bottom:10px;}
+  .stop p{font-size:14px; color:#4B4F58;}
+
+  /* ---------- PLANS ---------- */
+  .plans{background:var(--ink); color:var(--paper);}
+  .plans .sec-head p{color:var(--steel);}
+  .plan-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .plan-card{
+    border:1px solid var(--line);
+    padding:36px 30px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+  }
+  .plan-card.featured{
+    border-color:var(--yellow);
+    background:var(--ink-soft);
+  }
+  .plan-flag{
+    position:absolute;
+    top:0; right:0;
+    background:var(--orange);
+    color:var(--white);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:5px 12px;
+  }
+  .plan-code{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--yellow);
+    margin-bottom:18px;
+    display:block;
+  }
+  .plan-card h3{font-size:22px; margin-bottom:10px;}
+  .plan-price{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:26px;
+    color:var(--paper);
+    margin-bottom:6px;
+  }
+  .plan-price-note{
+    font-size:12.5px;
+    color:var(--steel);
+    margin-bottom:24px;
+  }
+  .plan-features{
+    list-style:none;
+    margin-bottom:30px;
+    flex-grow:1;
+  }
+  .plan-features li{
+    font-size:14px;
+    color:var(--steel);
+    padding:9px 0;
+    border-top:1px solid var(--line);
+    display:flex;
+    gap:10px;
+  }
+  .plan-features li::before{
+    content:"—";
+    color:var(--orange);
+    flex-shrink:0;
+  }
+  .plan-cta{
+    display:block;
+    text-align:center;
+    border:1px solid var(--line);
+    color:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    padding:14px 20px;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+    cursor:pointer;
+    background:none;
+    width:100%;
+  }
+  .plan-cta:hover{background:var(--yellow); color:var(--ink); border-color:var(--yellow);}
+  .plan-card.featured .plan-cta{background:var(--yellow); color:var(--ink); border-color:var(--yellow);}
+  .plan-card.featured .plan-cta:hover{background:var(--orange); color:var(--white); border-color:var(--orange);}
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:var(--yellow);
+    color:var(--ink);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+  }
+  .contact h2{font-size:clamp(32px, 5vw, 56px); margin-bottom:20px;}
+  .contact-copy p{max-width:420px; font-size:16px; margin-bottom:34px;}
+  .contact-detail{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    margin-bottom:10px;
+    display:block;
+  }
+  form{display:flex; flex-direction:column; gap:16px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-bottom:6px;
+    display:block;
+  }
+  input, select, textarea{
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:2px solid var(--ink);
+    padding:10px 2px;
+    font-family:'Inter', sans-serif;
+    font-size:15px;
+    color:var(--ink);
+  }
+  input::placeholder, textarea::placeholder{color:rgba(20,24,31,0.45);}
+  textarea{resize:vertical; min-height:70px;}
+  .submit-btn{
+    margin-top:12px;
+    background:var(--ink);
+    color:var(--paper);
+    border:none;
+    padding:16px 26px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    cursor:pointer;
+    transition:background .2s ease;
+    align-self:flex-start;
+  }
+  .submit-btn:hover{background:var(--orange);}
+  .submit-btn:disabled{opacity:0.6; cursor:not-allowed;}
+  .form-status{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    margin-top:4px;
+    min-height:16px;
+  }
+  .form-status.error{color:#8A1F0A;}
+  .form-status.ok{color:#14181F;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--steel);
+    padding:56px 0 32px;
+  }
+  .foot-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:36px;
+    border-bottom:1px solid var(--line);
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  .foot-links{display:flex; gap:28px; flex-wrap:wrap;}
+  .foot-links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--steel);
+  }
+  .foot-links a:hover{color:var(--yellow);}
+  .foot-bottom{
+    display:flex;
+    justify-content:space-between;
+    padding-top:24px;
+    font-size:12px;
+    font-family:'IBM Plex Mono', monospace;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  @media (max-width:1024px){
+    .plan-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+
+  @media (max-width:860px){
+    .nav-row{height:64px;}
+    nav.links{
+      position:fixed;
+      top:64px; left:0; right:0;
+      background:var(--ink);
+      flex-direction:column;
+      align-items:flex-start;
+      padding:20px 32px 28px;
+      gap:18px;
+      border-bottom:1px solid var(--line);
+      display:none;
+    }
+    nav.links.open{display:flex;}
+    .nav-toggle{
+      display:flex;
+      background:none;
+      border:1px solid var(--line);
+      color:var(--paper);
+      width:40px; height:40px;
+      align-items:center;
+      justify-content:center;
+      font-family:'IBM Plex Mono', monospace;
+      font-size:12px;
+      cursor:pointer;
+    }
+    .hero{padding:132px 0 64px;}
+    section{padding:80px 0;}
+    .service-grid{grid-template-columns:1fr;}
+    .plan-grid{grid-template-columns:1fr;}
+    .work-grid{grid-template-columns:1fr;}
+    .route{grid-template-columns:1fr; gap:36px;}
+    .route::before{display:none;}
+    .contact-grid{grid-template-columns:1fr; gap:40px;}
+    .field-row{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .flap-plate span{animation:none; opacity:0;}
+    .flap-plate span:nth-child(1){opacity:1; transform:none;}
+    .ticker-track{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a href="#top" class="logo-mark" aria-label="DurSigns home">
+      <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="6" width="26" height="15" stroke="#FFC93C" stroke-width="2.4"/>
+        <line x1="15" y1="21" x2="15" y2="28" stroke="#FFC93C" stroke-width="2.4"/>
+        <line x1="6" y1="11.5" x2="24" y2="11.5" stroke="#FFC93C" stroke-width="2"/>
+        <line x1="6" y1="16" x2="18" y2="16" stroke="#FFC93C" stroke-width="2"/>
+      </svg>
+      <span class="logo-word">Dur<span>Signs</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">MENU</button>
+    <nav class="links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#plans">Plans</a>
+      <a href="#contact" class="nav-cta start-project-btn">Start a Project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <span class="eyebrow mono">Brand · Web · Logo Design Studio</span>
+      <h1>Design that points<br>people <em>somewhere</em>.</h1>
+      <p class="hero-sub">DurSigns builds brand identities, websites, and marks with the same clarity as a good piece of signage — easy to read, hard to forget, impossible to misdirect.</p>
+
+      <div class="flap-row">
+        <span class="flap-label">We design —</span>
+        <div class="flap-plate" aria-hidden="true">
+          <span>Brand Identities</span>
+          <span>Websites</span>
+          <span>Logo Marks</span>
+          <span>Packaging</span>
+        </div>
+      </div>
+
+      <div class="hero-btns">
+        <a href="#work" class="btn btn-primary">See the Work</a>
+        <a href="#contact" class="btn btn-outline start-project-btn">Start a Project</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-item">Brand Identity</div>
+      <div class="ticker-item">Website Design</div>
+      <div class="ticker-item">Logo &amp; Mark</div>
+      <div class="ticker-item">Packaging &amp; Print</div>
+      <div class="ticker-item">Art Direction</div>
+      <div class="ticker-item">Design Systems</div>
+      <div class="ticker-item">Brand Identity</div>
+      <div class="ticker-item">Website Design</div>
+      <div class="ticker-item">Logo &amp; Mark</div>
+      <div class="ticker-item">Packaging &amp; Print</div>
+      <div class="ticker-item">Art Direction</div>
+      <div class="ticker-item">Design Systems</div>
+    </div>
+  </div>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="sec-tag mono">Directory — What We Design</span>
+          <h2>Four ways in.</h2>
+        </div>
+        <p>Pick a plate. Each service stands on its own or works as part of a full identity system.</p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-code">A1</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#14181F" stroke-width="2"/></svg>
+          </div>
+          <h3>Brand Identity</h3>
+          <p>Name, voice, color, type — the whole system that makes a company recognizable before anyone reads a word.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-code">A2</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#14181F" stroke-width="2"/></svg>
+          </div>
+          <h3>Website Design</h3>
+          <p>Marketing sites and product interfaces built to load fast, read clearly, and hold up on every screen.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-code">A3</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#14181F" stroke-width="2"/></svg>
+          </div>
+          <h3>Logo &amp; Mark</h3>
+          <p>A symbol that still works at 16 pixels and on the side of a truck — tested across every size it'll live at.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-code">A4</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#14181F" stroke-width="2"/></svg>
+          </div>
+          <h3>Packaging &amp; Print</h3>
+          <p>Boxes, labels, and collateral that carry the brand into the physical world without losing the plot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="sec-tag mono">Selected Work</span>
+          <h2>Recent plates.</h2>
+        </div>
+        <p>A handful of projects across brand, web, and mark design.</p>
+      </div>
+
+      <div class="work-grid">
+        <div class="work-card">
+          <span class="work-plate mono">Brand + Web</span>
+          <h3>Northbound Coffee</h3>
+          <p class="work-type">Identity system &amp; e-commerce site for a regional roaster.</p>
+          <div class="tag-row"><span class="tag">Logo</span><span class="tag">Packaging</span><span class="tag">Web</span></div>
+        </div>
+        <div class="work-card">
+          <span class="work-plate mono">Website</span>
+          <h3>Fieldwork Studio</h3>
+          <p class="work-type">Portfolio site for an architecture &amp; landscape practice.</p>
+          <div class="tag-row"><span class="tag">Web Design</span><span class="tag">Case Studies</span></div>
+        </div>
+        <div class="work-card">
+          <span class="work-plate mono">Logo</span>
+          <h3>Almanac Press</h3>
+          <p class="work-type">Wordmark and print identity for an independent publisher.</p>
+          <div class="tag-row"><span class="tag">Logo</span><span class="tag">Print</span></div>
+        </div>
+        <div class="work-card">
+          <span class="work-plate mono">Brand</span>
+          <h3>Solstice Market</h3>
+          <p class="work-type">Full identity and signage system for a farmers' market group.</p>
+          <div class="tag-row"><span class="tag">Identity</span><span class="tag">Signage</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="sec-tag mono">How a Project Runs</span>
+          <h2>Four stops, one route.</h2>
+        </div>
+        <p>Every project follows the same line — you'll always know which stop you're at.</p>
+      </div>
+
+      <div class="route">
+        <div class="stop">
+          <span class="mono">Stop 01</span>
+          <h3>Discover</h3>
+          <p>We learn the business, the audience, and what "done well" actually looks like.</p>
+        </div>
+        <div class="stop">
+          <span class="mono">Stop 02</span>
+          <h3>Define</h3>
+          <p>Positioning, tone, and a visual direction get locked before any screens are built.</p>
+        </div>
+        <div class="stop">
+          <span class="mono">Stop 03</span>
+          <h3>Design</h3>
+          <p>Full design across every touchpoint — logo, site, and system — built to hold together.</p>
+        </div>
+        <div class="stop">
+          <span class="mono">Stop 04</span>
+          <h3>Deliver</h3>
+          <p>Final files, a working site, and guidelines so the brand stays consistent after we're gone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plans" id="plans">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="sec-tag mono">Plans</span>
+          <h2>Seven ways to work with us.</h2>
+        </div>
+        <p>Start with a free chat, go all-in on a full system, or tell us what you need. All prices in NZD.</p>
+      </div>
+
+      <div class="plan-grid">
+        <div class="plan-card">
+          <span class="plan-code">P0</span>
+          <h3>Free Trial Call</h3>
+          <div class="plan-price">$0</div>
+          <div class="plan-price-note">NZD · 1–2 hrs · No obligation</div>
+          <ul class="plan-features">
+            <li>1–2 hour discovery call</li>
+            <li>A first look at direction &amp; fit</li>
+            <li>A quote for the right-sized plan</li>
+          </ul>
+          <button class="plan-cta start-project-btn" data-plan-name="Free Trial Call">Book Free Call</button>
+        </div>
+
+        <div class="plan-card">
+          <span class="plan-code">P1</span>
+          <h3>Mark Only</h3>
+          <div class="plan-price">From $150</div>
+          <div class="plan-price-note">NZD · Logo mark · ~1 week turnaround</div>
+          <ul class="plan-features">
+            <li>One logo mark, 2–3 concepts</li>
+            <li>One round of revisions</li>
+            <li>Source files on delivery</li>
+          </ul>
+          <button class="plan-cta start-project-btn" data-plan-name="Mark Only">Choose Mark Only</button>
+        </div>
+
+        <div class="plan-card">
+          <span class="plan-code">P2</span>
+          <h3>Starter Sign</h3>
+          <div class="plan-price">From $450</div>
+          <div class="plan-price-note">NZD · Logo + basics · ~2 week turnaround</div>
+          <ul class="plan-features">
+            <li>Logo mark &amp; simple type system</li>
+            <li>Business card or social kit</li>
+            <li>One round of revisions</li>
+          </ul>
+          <button class="plan-cta start-project-btn" data-plan-name="Starter Sign">Choose Starter</button>
+        </div>
+
+        <div class="plan-card">
+          <span class="plan-code">P3</span>
+          <h3>Website Basics</h3>
+          <div class="plan-price">From $1,200</div>
+          <div class="plan-price-note">NZD · Single site · ~3 week turnaround</div>
+          <ul class="plan-features">
+            <li>Up to 3 pages, mobile-ready</li>
+            <li>One round of revisions</li>
+            <li>Basic on-page SEO setup</li>
+          </ul>
+          <button class="plan-cta start-project-btn" data-plan-name="Website Basics">Choose Website Basics</button>
+        </div>
+
+        <div class="plan-card">
+          <span class="plan-code">P4</span>
+          <h3>Brand Identity</h3>
+          <div class="plan-price">From $2,800</div>
+          <div class="plan-price-note">NZD · Full identity · ~4 week turnaround</div>
+          <ul class="plan-features">
+            <li>Logo suite &amp; full color/type system</li>
+            <li>Brand guidelines document</li>
+            <li>Two rounds of revisions</li>
+          </ul>
+          <button class="plan-cta start-project-btn" data-plan-name="Brand Identity">Choose Brand Identity</button>
+        </div>
+
+        <div class="plan-card featured">
+          <span class="plan-flag">Most Requested</span>
+          <span class="plan-code">P5</span>
+          <h3>Full System</h3>
+          <div class="plan-price">From $6,500</div>
+          <div class="plan-price-note">NZD · Brand + web · ~6 week turnaround</div>
+          <ul class="plan-features">
+            <li>Full brand identity &amp; logo suite</li>
+            <li>Website design, up to 6 pages</li>
+            <li>Two rounds of revisions</li>
+            <li>Brand guidelines document</li>
+            <li>Live kickoff &amp; review calls</li>
+          </ul>
+          <button class="plan-cta start-project-btn" data-plan-name="Full System">Choose Full System</button>
+        </div>
+
+        <div class="plan-card">
+          <span class="plan-code">P6</span>
+          <h3>Custom Plan</h3>
+          <div class="plan-price">Let's talk</div>
+          <div class="plan-price-note">NZD · Scoped to your project</div>
+          <ul class="plan-features">
+            <li>Any mix of brand, web, logo &amp; print</li>
+            <li>Packaging, multi-site, or ongoing work</li>
+            <li>A plan built around your scope</li>
+          </ul>
+          <button class="plan-cta start-project-btn" data-plan-name="Custom Plan">Build a Custom Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-copy">
+        <h2>Let's make<br>your sign.</h2>
+        <p>Tell us what you're building. We'll reply within two business days with next steps.</p>
+        <span class="contact-detail">dursigns@abcadmin9.online</span>
+        <span class="contact-detail">Mon–Fri, 9:00–18:00</span>
+      </div>
+      <form id="contactForm" novalidate>
+        <div class="field-row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@company.com" required>
+          </div>
+        </div>
+        <div>
+          <label for="ptype">Project type</label>
+          <select id="ptype">
+            <option>Brand identity</option>
+            <option>Website design</option>
+            <option>Logo &amp; mark</option>
+            <option>Packaging &amp; print</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="msg">Project details</label>
+          <textarea id="msg" placeholder="A sentence or two on what you need"></textarea>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a href="#top" class="logo-mark" aria-label="DurSigns home">
+        <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+          <rect x="2" y="6" width="26" height="15" stroke="#FFC93C" stroke-width="2.4"/>
+          <line x1="15" y1="21" x2="15" y2="28" stroke="#FFC93C" stroke-width="2.4"/>
+          <line x1="6" y1="11.5" x2="24" y2="11.5" stroke="#FFC93C" stroke-width="2"/>
+          <line x1="6" y1="16" x2="18" y2="16" stroke="#FFC93C" stroke-width="2"/>
+        </svg>
+        <span class="logo-word" style="font-size:17px;">Dur<span>Signs</span></span>
+      </a>
+      <div class="foot-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#plans">Plans</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 DurSigns Studio</span>
+      <span>Brand &amp; Web Design</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }));
+
+  // "Start a Project" and plan buttons: scroll to the form, optionally
+  // note the chosen plan, then focus the first field.
+  document.querySelectorAll('.start-project-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const planName = btn.getAttribute('data-plan-name');
+      const msgField = document.getElementById('msg');
+      if (planName && msgField && !msgField.value.trim()) {
+        msgField.value = `I'm interested in the ${planName} plan. `;
+      }
+      window.setTimeout(() => {
+        document.getElementById('name').focus();
+      }, 450);
+    });
+  });
+
+  // Contact form: build a pre-filled email since this page has no
+  // backend to receive submissions directly.
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const ptype = document.getElementById('ptype').value;
+    const msg = document.getElementById('msg').value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!name || !email) {
+      status.textContent = 'Please fill in your name and email.';
+      status.className = 'form-status error';
+      return;
+    }
+    if (!emailPattern.test(email)) {
+      status.textContent = 'That email address doesn\'t look right.';
+      status.className = 'form-status error';
+      return;
+    }
+
+    const subject = encodeURIComponent(`New project inquiry — ${ptype}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nProject type: ${ptype}\n\nDetails:\n${msg || '(none provided)'}`
+    );
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Opening Email…';
+    status.textContent = 'Opening your email app with this pre-filled — hit send there to reach us.';
+    status.className = 'form-status ok';
+
+    window.location.href = `mailto:dursigns@abcadmin9.online?subject=${subject}&body=${body}`;
+
+    window.setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }, 2500);
+  });
+</script>
+
+</body>
+</html>
